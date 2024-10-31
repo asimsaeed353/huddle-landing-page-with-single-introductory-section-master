@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Colors */
+  --clr-primary: hsl(257, 40%, 49%);
+  --clr-sMagenta: hsl(300, 69%, 71%);
+
+  /* Typography */
+  --ff-heading: "Poppins", sans-serif;
+  --ff-body: "Open sans", sans-serif;
+
+  --fw-light: 400;
+  --fw-med: 600;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile First Workflow */
+body {
+  min-height: 100vh;
+  background-image: url("./images/bg-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--clr-primary);
+  font-size: 0.875rem;
+
+  color: white;
+  font-family: var(--ff-body);
+}
+
+.wrapper {
+  padding-inline: 2rem;
+  padding-block: 2rem;
+
+  gap: 4rem;
+}
+
+.logo-img {
+  width: 7.5rem;
+  align-self: flex-start;
+}
+
+.content {
+  gap: 3rem;
+}
+
+.content__text {
+  text-align: center;
+  gap: 2rem;
+
+  h2{
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
+    font-weight: var(--fw-med);
+  }
+}
+
+.button {
+  align-self: center;
+  padding: 0.5rem 3.5rem;
+
+  border: none;
+  border-radius: 1rem;
+
+  background-color: white;
+  color: var(--clr-primary);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-sMagenta);
+  color: white;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.icons {
+  gap: 0.6rem;
+}
+
+.icons i {
+  font-size: 0.75rem;
+
+  border: 1px solid white;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+i:hover,
+i:focus {
+  color: var(--clr-sMagenta);
+  border-color: var(--clr-sMagenta);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(0, 0%, 100%);
+}
+
+p{
+  line-height: 1.75;
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url("./images/bg-desktop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero-img {
+    width: 33rem;
+  }
+
+  .content__text {
+    text-align: left;
+    justify-content: center;
+    gap: 1.5rem;
+
+    h2{
+      font-size: 2rem;
+    }
+  }
+
+  .button {
+    align-self: flex-start;
+    padding: 0.5rem 2.5rem;
+  }
+
+  .icons {
+    align-self: flex-end;
+  }
+}
